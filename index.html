@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Plugin jquery-countdown</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="jquery.countdown.js" type="text/javascript"></script>
+		<style>
+		#centrador {
+			width: 900px;
+			margin: 10px auto;
+			padding: 20px;
+			border: solid 1px #ccc;
+		}
+
+		#resultados p {
+			font-size: 2em;
+		}
+
+		.countdown {
+			color: #009;
+		}
+
+		i,pre {
+			color: #666;
+		}
+
+		.contador{}
+		.contador .countdown{
+			color: #fff;
+		}
+		.contador .countdown_dia{
+			background-color: #000;
+			padding: 10px 5px;
+		}
+		.contador .countdown_hora{
+			background-color: #000;
+			padding: 10px 0;
+		}
+		.contador .countdown_minutos{
+			background-color: #000;
+			padding: 10px 0;
+		}
+		.contador .countdown_segundos{
+			background-color: #000;
+			padding: 10px 5px 10px 0;
+		}
+
+		</style>
+	</head>
+	<body>
+		<div id="centrador">
+			<h1>Plugin jQuery Cuenta Atrás</h1>
+
+			<p>Este pequeño plugin (1,9K sin comprimir) sirve para mostrar tantos contadores regresivos como quieras en una página web.</p>
+
+			<h2>USO</h2>
+			<ol>
+				<li>
+					Incluir jquery y jquery.countdown.js en el head de tu página:
+					<br />
+					<i>
+						&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+						<br />
+						&lt;script src="jquery.countdown.js" type="text/javascript"&gt;&lt;/script&gt;
+					</i>
+				</li>
+				<li>
+					Definir la etiqueta donde vas a mostrar el contador regresivo:
+					<br />
+					<i>
+						&lt;div class="countdown" data-comienzo=""2016/11/29 00:00 data-duracion="2016/11/29 23:59" data-pasando="El evento esta transcurriendo" data-fin="El evento ya ha finalizado"&gt;&lt;/div&gt;
+					</i>
+					<ol>
+						<li>
+							Los atributos data-comienzo y data-duracion debe contener un formato Date válido para javascript: <b>año/mes/dia hora:minuto</b>, por ejemplo.
+						</li>
+						<li>Cuando el evento llegue a su hora se mostrara el atributo data-pasando y empezara la cuenta atras del atributo data-duracion</li>
+						<li>Una vez pasada la duracion se mostrará el texto del atributo data-fin</li>
+					</ol>
+				</li>
+				<li>
+					Invocar el script:
+					<br />
+<pre>
+	&lt;script type="text/javascript"&gt;
+		;$(function(){	
+			$('.countdown').countdown();
+		});
+	&lt;/script&gt;
+</pre>
+				</li>
+				<li>
+					Codigo generado dentro de la etiqueta
+					<i>
+						&lt;span class="countdown_dia"&gt;65d &lt;/span&gt;&lt;span class="countdown_hora"&gt;04&lt;/span&gt;&lt;span class="countdown_minutos"&gt;:32&lt;/span&gt;&lt;span class="countdown_segundos"&gt;:06&lt;/span&gt;
+					</i>
+				</li>
+			</ol>
+
+			<h2>TEST</h2>
+			<div id="resultados">
+				<p>
+					Falta 
+					<span class="countdown" data-comienzo="2016-10-13 00:00" data-duracion="2016-10-13 23:59" data-pasando="El evento esta transcurriendo" data-fin="El evento ya ha finalizado"></span>.
+				</p>
+				<p>
+					Falta 
+					<span class="countdown" data-comienzo="2016/11/29 00:00" data-duracion="2016/11/29 23:59" data-pasando="El evento esta transcurriendo" data-fin="El evento ya ha finalizado"></span>.
+				</p>
+				<div class="contador">
+					<div class="countdown" data-comienzo="2016/11/29 00:00" data-duracion="2016/11/29 23:59" data-pasando="El evento esta transcurriendo" data-fin="El evento ya ha finalizado"></div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+				;$(function(){	
+					$('.countdown').countdown();
+				});
+		</script>
+
+	</body>
+</html>
+
